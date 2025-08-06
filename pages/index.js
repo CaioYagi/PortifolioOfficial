@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import styles from '../styles/AnimatedTriangle.module.css';
 import stylesHome from '../styles/Home.module.css';
-import ParallaxPhoto from '../components/AnimatedTriangle';
+import ParallaxPhoto from '../components/AnimatedTriangle'; // Importação que estava faltando
 import GitHubButton from '../components/GitHubButton';
+import LinkedInButton from '../components/LinkedInButton';
 import FooterMain from '../components/FooterMain';
 import Navbar from '../components/Navbar';
+import FormationSkills from '../components/FormationSkills';
 
 function Home() {
   return (
@@ -21,15 +23,21 @@ function Home() {
               Living in Salto, São Paulo, Brazil <img src="/images/icons/icon-park_local-pin.svg" alt="Localização"/> <img src="/images/icons/brasil.png" style={{width:'20px',height:'20px'}} alt="Mapa"/>
             </p>
             
-            {/* Botão do GitHub alinhado à direita */}
+            {/* Botões alinhados à direita */}
             <div style={{ 
               marginTop: '30px', 
               display: 'flex', 
+              gap: '15px',
               justifyContent: 'flex-end' 
             }}>
               <GitHubButton 
-                href="https://github.com/seu-usuario"
+                href="https://github.com/CaioYagi"
                 text="GitHub"
+                size="medium"
+              />
+              <LinkedInButton 
+                href="https://www.linkedin.com/in/caio-hiroki-yagi/"
+                text="LinkedIn"
                 size="medium"
               />
             </div>
@@ -43,6 +51,8 @@ function Home() {
           </div>
         </div>
       </div>
+      
+      <FormationSkills />
       
       <FooterMain />
     </>

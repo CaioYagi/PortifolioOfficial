@@ -1,0 +1,213 @@
+.container {
+  position: relative;
+  min-height: 50vh;
+  padding: 50px 40px;
+  margin-top: 20%;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Box shadow brilhante com as cores do parallax */
+  box-shadow: 
+    0 0 30px rgba(123, 143, 232, 0.4),
+    0 0 60px rgba(77, 186, 205, 0.3),
+    0 0 90px rgba(123, 143, 232, 0.2),
+    0 8px 32px rgba(0, 0, 0, 0.3);
+  animation: glowingBorder 4s ease-in-out infinite alternate;
+}
+
+/* Animação do brilho da borda */
+@keyframes glowingBorder {
+  0% {
+    box-shadow: 
+      0 0 20px rgba(123, 143, 232, 0.3),
+      0 0 40px rgba(77, 186, 205, 0.2),
+      0 0 60px rgba(123, 143, 232, 0.1),
+      0 8px 32px rgba(0, 0, 0, 0.3);
+  }
+  100% {
+    box-shadow: 
+      0 0 40px rgba(123, 143, 232, 0.6),
+      0 0 80px rgba(77, 186, 205, 0.4),
+      0 0 120px rgba(123, 143, 232, 0.3),
+      0 12px 40px rgba(0, 0, 0, 0.4);
+  }
+}
+
+/* Estilos para links dentro do componente */
+.container a {
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-weight: normal;
+}
+
+.container a:hover {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+/* Conteúdo principal */
+.content {
+  position: relative;
+  z-index: 3;
+  max-width: 1000px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 60px;
+}
+
+.section {
+  color: white;
+}
+
+.sectionTitle {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 30px;
+  color: #ffffff;
+  position: relative;
+}
+
+.sectionTitle::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 40px;
+  height: 2px;
+  background: linear-gradient(90deg, #7B8FE8 0%, #4DBACD 100%);
+}
+
+.formationCard {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  padding: 25px;
+  transition: all 0.3s ease;
+  margin-bottom: 20px;
+}
+
+.formationCard:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-5px);
+}
+
+.courseTitle {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 8px;
+}
+
+.institution {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.8);
+  font-style: italic;
+}
+
+.languageList {
+  list-style: none;
+  padding: 0;
+}
+
+.languageItem {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 12px;
+  padding-left: 20px;
+  position: relative;
+}
+
+.languageItem::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: #4DBACD;
+  font-size: 1.2rem;
+}
+
+.skillsGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.skillColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.skillItem {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.9);
+  padding: 8px 12px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  border-left: 3px solid transparent;
+}
+
+.skillItem:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-left-color: #7B8FE8;
+  transform: translateX(5px);
+}
+
+/* Responsividade */
+@media (max-width: 1200px) {
+  .content {
+    gap: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 40px 20px;
+    margin-top: 10%;
+    border-radius: 15px;
+    /* Box shadow reduzido em tablets */
+    box-shadow: 
+      0 0 20px rgba(123, 143, 232, 0.3),
+      0 0 40px rgba(77, 186, 205, 0.2),
+      0 4px 20px rgba(0, 0, 0, 0.3);
+  }
+  
+  .content {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  
+  .skillsGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    margin-top: 5%;
+    border-radius: 12px;
+    /* Box shadow ainda mais reduzido em mobile */
+    box-shadow: 
+      0 0 15px rgba(123, 143, 232, 0.2),
+      0 0 25px rgba(77, 186, 205, 0.15),
+      0 2px 15px rgba(0, 0, 0, 0.3);
+  }
+  
+  .sectionTitle {
+    font-size: 1.5rem;
+  }
+  
+  .formationCard {
+    padding: 20px;
+  }
+  
+  .courseTitle {
+    font-size: 1.1rem;
+  }
+}

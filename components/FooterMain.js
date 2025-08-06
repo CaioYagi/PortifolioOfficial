@@ -33,7 +33,7 @@ const FooterMain = () => {
             <h4 className={styles.sectionTitle}>Redes Sociais</h4>
             <div className={styles.socialLinks}>
               <a 
-                href="https://github.com/seu-usuario" 
+                href="https://github.com/CaioYagi" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className={styles.socialLink}
@@ -45,7 +45,7 @@ const FooterMain = () => {
               </a>
               
               <a 
-                href="https://linkedin.com/in/seu-usuario" 
+                href="https://www.linkedin.com/in/caio-hiroki-yagi/" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className={styles.socialLink}
@@ -57,7 +57,7 @@ const FooterMain = () => {
               </a>
 
               <a 
-                href="mailto:seu.email@example.com" 
+                href="mailto:caioyag@gmail.com" 
                 className={styles.socialLink}
               >
                 <svg viewBox="0 0 24 24" fill="currentColor">
