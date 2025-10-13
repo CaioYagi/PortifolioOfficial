@@ -18,6 +18,95 @@
   animation: glowingBorder 4s ease-in-out infinite alternate;
 }
 
+/* ESTRELAS PULSANTES NO BACKGROUND */
+.container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(1px 1px at 20px 30px, rgba(255, 255, 255, 0.8), transparent),
+    radial-gradient(1px 1px at 40px 70px, rgba(123, 143, 232, 0.6), transparent),
+    radial-gradient(1px 1px at 90px 40px, rgba(77, 186, 205, 0.7), transparent),
+    radial-gradient(1px 1px at 130px 80px, rgba(255, 255, 255, 0.5), transparent),
+    radial-gradient(1px 1px at 160px 30px, rgba(123, 143, 232, 0.4), transparent),
+    radial-gradient(1px 1px at 200px 60px, rgba(77, 186, 205, 0.8), transparent),
+    radial-gradient(1px 1px at 240px 90px, rgba(255, 255, 255, 0.6), transparent),
+    radial-gradient(1px 1px at 280px 20px, rgba(123, 143, 232, 0.7), transparent),
+    radial-gradient(1px 1px at 320px 70px, rgba(77, 186, 205, 0.5), transparent),
+    radial-gradient(1px 1px at 360px 40px, rgba(255, 255, 255, 0.9), transparent);
+  background-repeat: repeat;
+  background-size: 400px 120px;
+  animation: starsFloat 20s ease-in-out infinite;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.container::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(2px 2px at 30px 50px, rgba(255, 255, 255, 0.9), transparent),
+    radial-gradient(2px 2px at 80px 20px, rgba(123, 143, 232, 0.8), transparent),
+    radial-gradient(2px 2px at 120px 90px, rgba(77, 186, 205, 0.6), transparent),
+    radial-gradient(2px 2px at 180px 40px, rgba(255, 255, 255, 0.7), transparent),
+    radial-gradient(2px 2px at 220px 70px, rgba(123, 143, 232, 0.5), transparent),
+    radial-gradient(2px 2px at 280px 10px, rgba(77, 186, 205, 0.9), transparent);
+  background-repeat: repeat;
+  background-size: 320px 120px;
+  animation: starsFloatReverse 25s ease-in-out infinite reverse;
+  z-index: 2;
+  pointer-events: none;
+}
+
+@keyframes starsFloat {
+  0% {
+    opacity: 0.4;
+    transform: translateY(0) scale(1);
+  }
+  25% {
+    opacity: 0.8;
+    transform: translateY(-10px) scale(1.1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: translateY(-5px) scale(0.9);
+  }
+  75% {
+    opacity: 0.9;
+    transform: translateY(-15px) scale(1.2);
+  }
+  100% {
+    opacity: 0.5;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes starsFloatReverse {
+  0% {
+    opacity: 0.6;
+    transform: translateX(0) scale(1);
+  }
+  30% {
+    opacity: 0.9;
+    transform: translateX(5px) scale(1.1);
+  }
+  60% {
+    opacity: 0.4;
+    transform: translateX(-3px) scale(0.8);
+  }
+  100% {
+    opacity: 0.7;
+    transform: translateX(0) scale(1);
+  }
+}
+
 /* Animação do brilho da borda */
 @keyframes glowingBorder {
   0% {
@@ -53,7 +142,7 @@
 .content {
   position: relative;
   z-index: 3;
-  max-width: 1000px;
+  max-width: 1200px;
   width: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -141,6 +230,7 @@
   display: flex;
   flex-direction: column;
   gap: 12px;
+  position: relative;
 }
 
 .skillItem {
@@ -151,63 +241,253 @@
   border-radius: 6px;
   transition: all 0.3s ease;
   border-left: 3px solid transparent;
+  text-decoration: none;
+  display: block;
+  cursor: pointer;
+  position: relative;
 }
 
 .skillItem:hover {
   background: rgba(255, 255, 255, 0.12);
   border-left-color: #7B8FE8;
   transform: translateX(5px);
+  color: #ffffff;
+  text-decoration: none;
+  box-shadow: 0 0 10px rgba(123, 143, 232, 0.3);
 }
 
-/* Responsividade */
-@media (max-width: 1200px) {
+.skillItem::after {
+  content: '↗';
+  position: absolute;
+  right: 12px;
+  opacity: 0;
+  transition: all 0.3s ease;
+  font-size: 0.8rem;
+  color: #4DBACD;
+}
+
+.skillItem:hover::after {
+  opacity: 1;
+  transform: translateX(2px) translateY(-2px);
+}
+
+/* RESPONSIVIDADE COMPLETA */
+
+/* Desktop Grande */
+@media (max-width: 1400px) {
   .content {
-    gap: 40px;
+    max-width: 1000px;
+    gap: 50px;
   }
 }
 
+/* Desktop Médio */
+@media (max-width: 1200px) {
+  .container {
+    padding: 45px 35px;
+  }
+
+  .content {
+    gap: 40px;
+  }
+
+  .sectionTitle {
+    font-size: 1.6rem;
+  }
+}
+
+/* Laptop / Tablet Grande */
+@media (max-width: 1024px) {
+  .container {
+    padding: 40px 30px;
+    margin-top: 15%;
+  }
+
+  .content {
+    grid-template-columns: 1fr 1fr;
+    gap: 35px;
+  }
+
+  /* A seção de Skills ocupa as duas colunas */
+  .section:last-child {
+    grid-column: 1 / -1;
+  }
+
+  .skillsGrid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+  }
+}
+
+/* Tablet */
 @media (max-width: 768px) {
   .container {
-    padding: 40px 20px;
+    padding: 35px 25px;
     margin-top: 10%;
     border-radius: 15px;
-    /* Box shadow reduzido em tablets */
+    animation: none; /* Pausar animação de borda */
     box-shadow: 
       0 0 20px rgba(123, 143, 232, 0.3),
       0 0 40px rgba(77, 186, 205, 0.2),
       0 4px 20px rgba(0, 0, 0, 0.3);
   }
-  
+
+  /* Reduzir animações das estrelas */
+  .container::before,
+  .container::after {
+    animation-duration: 30s;
+    opacity: 0.4;
+    background-size: 300px 100px;
+  }
+
   .content {
     grid-template-columns: 1fr;
     gap: 40px;
   }
-  
+
+  .sectionTitle {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  .sectionTitle::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
   .skillsGrid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+  }
+
+  .formationCard {
+    padding: 20px;
+  }
+
+  .courseTitle {
+    font-size: 1.1rem;
+  }
+
+  .languageItem {
+    text-align: center;
+    padding-left: 0;
+  }
+
+  .languageItem::before {
+    display: none;
   }
 }
 
+/* Mobile Grande */
+@media (max-width: 600px) {
+  .container {
+    padding: 30px 20px;
+  }
+
+  .skillsGrid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .skillItem {
+    text-align: center;
+    padding: 12px 15px;
+  }
+
+  .skillItem:hover {
+    transform: translateY(-2px);
+  }
+}
+
+/* Mobile */
 @media (max-width: 480px) {
   .container {
     margin-top: 5%;
+    padding: 25px 15px;
     border-radius: 12px;
-    /* Box shadow ainda mais reduzido em mobile */
     box-shadow: 
       0 0 15px rgba(123, 143, 232, 0.2),
       0 0 25px rgba(77, 186, 205, 0.15),
       0 2px 15px rgba(0, 0, 0, 0.3);
   }
-  
+
+  /* Desativar estrelas em mobile pequeno */
+  .container::before,
+  .container::after {
+    display: none;
+  }
+
+  .content {
+    gap: 30px;
+  }
+
   .sectionTitle {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
+    margin-bottom: 20px;
   }
-  
+
   .formationCard {
-    padding: 20px;
+    padding: 15px;
   }
-  
+
   .courseTitle {
-    font-size: 1.1rem;
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+
+  .institution {
+    font-size: 0.9rem;
+  }
+
+  .languageItem {
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+  }
+
+  .skillItem {
+    font-size: 0.9rem;
+    padding: 10px 12px;
+  }
+
+  /* Remover efeitos hover em mobile */
+  .skillItem:hover {
+    transform: none;
+    box-shadow: none;
+  }
+
+  .skillItem::after {
+    display: none;
+  }
+
+  .formationCard:hover {
+    transform: none;
+  }
+}
+
+/* Mobile Muito Pequeno */
+@media (max-width: 360px) {
+  .container {
+    padding: 20px 10px;
+  }
+
+  .sectionTitle {
+    font-size: 1.2rem;
+  }
+
+  .courseTitle {
+    font-size: 0.95rem;
+  }
+
+  .institution {
+    font-size: 0.8rem;
+  }
+
+  .skillItem {
+    font-size: 0.8rem;
+    padding: 8px 10px;
+  }
+
+  .languageItem {
+    font-size: 0.8rem;
   }
 }

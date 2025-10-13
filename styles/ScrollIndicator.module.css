@@ -1,0 +1,127 @@
+.scrollIndicator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 20px;
+  transition: all 0.5s ease;
+  margin-top: -10px;
+  opacity: 1;
+  transform: translateY(0);
+  z-index: 100;
+}
+
+.scrollIndicator.hidden {
+  opacity: 0;
+  transform: translateY(20px);
+  pointer-events: none;
+}
+
+.scrollIndicator:hover {
+  transform: translateY(-8px);
+}
+
+.scrollIndicator.hidden:hover {
+  transform: translateY(20px);
+}
+
+.moreText {
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: #2d3748;
+  margin-bottom: 20px;
+  letter-spacing: 3px;
+  opacity: 0.9;
+  transition: all 0.3s ease;
+}
+
+.scrollIndicator:hover .moreText {
+  opacity: 1;
+  color: #1a202c;
+}
+
+.arrowContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.arrow {
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 8px solid #4a5568;
+  animation: fadeMove 3s infinite;
+  transition: all 0.3s ease;
+}
+
+.scrollIndicator:hover .arrow {
+  border-top-color: #2d3748;
+}
+
+.arrow:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.arrow:nth-child(2) {
+  animation-delay: 0.5s;
+}
+
+.arrow:nth-child(3) {
+  animation-delay: 1s;
+}
+
+@keyframes fadeMove {
+  0% {
+    opacity: 0.3;
+    transform: translateY(-4px);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(2px);
+  }
+  100% {
+    opacity: 0.3;
+    transform: translateY(-4px);
+  }
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .scrollIndicator {
+    padding: 15px;
+    margin-top: -5px;
+  }
+  
+  .moreText {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    letter-spacing: 2px;
+  }
+  
+  .arrow {
+    border-left-width: 8px;
+    border-right-width: 8px;
+    border-top-width: 6px;
+  }
+}
+
+@media (max-width: 480px) {
+  .scrollIndicator {
+    padding: 10px;
+    margin-top: 0px;
+  }
+  
+  .moreText {
+    font-size: 1.1rem;
+  }
+  
+  .arrow {
+    border-left-width: 7px;
+    border-right-width: 7px;
+    border-top-width: 5px;
+  }
+}

@@ -7,9 +7,17 @@ const ParallaxPhoto = ({
 }) => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isHovered, setIsHovered] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
   const containerRef = useRef(null);
 
   useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+
     const handleMouseMove = (e) => {
       if (containerRef.current) {
         const rect = containerRef.current.getBoundingClientRect();
@@ -20,8 +28,11 @@ const ParallaxPhoto = ({
     };
 
     document.addEventListener('mousemove', handleMouseMove);
-    return () => document.removeEventListener('mousemove', handleMouseMove);
-  }, []);
+    return () => {
+      document.removeEventListener('mousemove', handleMouseMove);
+      window.removeEventListener('resize', checkMobile);
+    };
+  }, [isMobile]);
 
   return (
     <div 
@@ -30,35 +41,39 @@ const ParallaxPhoto = ({
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      {/* Efeitos de fundo - movimento reduzido */}
-      <div 
-        className={styles.backgroundLayer1}
-        style={{
-          transform: `translate(${mousePosition.x * -8}px, ${mousePosition.y * -8}px) rotate(${mousePosition.x * 5}deg)`
-        }}
-      >
-        <div className={styles.glowEffect1}></div>
-      </div>
+      {/* Efeitos de fundo - ocultos no mobile */}
+      {!isMobile && (
+        <>
+          <div 
+            className={styles.backgroundLayer1}
+            style={{
+              transform: `translate(${mousePosition.x * -8}px, ${mousePosition.y * -8}px) rotate(${mousePosition.x * 5}deg)`
+            }}
+          >
+            <div className={styles.glowEffect1}></div>
+          </div>
 
-      <div 
-        className={styles.backgroundLayer2}
-        style={{
-          transform: `translate(${mousePosition.x * -5}px, ${mousePosition.y * -5}px) rotate(${mousePosition.x * -3}deg)`
-        }}
-      >
-        <div className={styles.glowEffect2}></div>
-      </div>
+          <div 
+            className={styles.backgroundLayer2}
+            style={{
+              transform: `translate(${mousePosition.x * -5}px, ${mousePosition.y * -5}px) rotate(${mousePosition.x * -3}deg)`
+            }}
+          >
+            <div className={styles.glowEffect2}></div>
+          </div>
 
-      <div 
-        className={styles.backgroundLayer3}
-        style={{
-          transform: `translate(${mousePosition.x * -12}px, ${mousePosition.y * -12}px) scale(${1 + Math.abs(mousePosition.x) * 0.05})`
-        }}
-      >
-        <div className={styles.glowEffect3}></div>
-      </div>
+          <div 
+            className={styles.backgroundLayer3}
+            style={{
+              transform: `translate(${mousePosition.x * -12}px, ${mousePosition.y * -12}px) scale(${1 + Math.abs(mousePosition.x) * 0.05})`
+            }}
+          >
+            <div className={styles.glowEffect3}></div>
+          </div>
+        </>
+      )}
       
-      {/* Imagem principal - movimento muito sutil */}
+      {/* Imagem principal - mantém efeito parallax em todas as telas */}
       <div 
         className={`${styles.parallaxLayer} ${isHovered ? styles.hovered : ''}`}
         style={{

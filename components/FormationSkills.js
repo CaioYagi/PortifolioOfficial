@@ -3,7 +3,7 @@ import styles from '../styles/FormationSkills.module.css';
 
 const FormationSkills = () => {
   return (
-    <div className={styles.container}>
+    <div className={styles.container} id='formation'>
       <div className={styles.content}>
         {/* Seção de Formação */}
         <div className={styles.section}>
@@ -37,22 +37,53 @@ const FormationSkills = () => {
           <h2 className={styles.sectionTitle}>Skills</h2>
           <div className={styles.skillsGrid}>
             <div className={styles.skillColumn}>
-              <div className={styles.skillItem}>HTML5</div>
-              <div className={styles.skillItem}>CSS</div>
-              <div className={styles.skillItem}>Bootstrap</div>
-              <div className={styles.skillItem}>Java</div>
-              <div className={styles.skillItem}>Figma</div>
-              <div className={styles.skillItem}>C#</div>
-              <div className={styles.skillItem}>React JS</div>
+              <a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank" rel="noopener noreferrer" className={styles.skillItem}>
+                HTML5
+              </a>
+              <a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank" rel="noopener noreferrer" className={styles.skillItem}>
+                CSS
+              </a>
+              <a href="https://getbootstrap.com/" target="_blank" rel="noopener noreferrer" className={styles.skillItem}>
+                Bootstrap
+              </a>
+              <a href="https://www.oracle.com/java/" target="_blank" rel="noopener noreferrer" className={styles.skillItem}>
+                Java
+              </a>
+              <a href="https://www.figma.com/" target="_blank" rel="noopener noreferrer" className={styles.skillItem}>
+                Figma
+              </a>
+              <a href="https://dotnet.microsoft.com/en-us/languages/csharp" target="_blank" rel="noopener noreferrer" className={styles.skillItem}>
+                C#
+              </a>
+              <a href="https://reactjs.org/" target="_blank" rel="noopener noreferrer" className={styles.skillItem}>
+                React JS
+              </a>
+              <a href="https://www.autodesk.com/products/fusion-360/overview" target="_blank" rel="noopener noreferrer" className={styles.skillItem}>
+                Fusion 360
+              </a>
             </div>
             <div className={styles.skillColumn}>
-              <div className={styles.skillItem}>Trello (model Kanban)</div>
-              <div className={styles.skillItem}>MongoDB</div>
-              <div className={styles.skillItem}>PHP</div>
-              <div className={styles.skillItem}>MySQL</div>
-              <div className={styles.skillItem}>Javascript</div>
-              <div className={styles.skillItem}>Premiere Pro</div>
-              <div className={styles.skillItem}>After Effects</div>
+              <a href="https://trello.com/" target="_blank" rel="noopener noreferrer" className={styles.skillItem}>
+                Trello (model Kanban)
+              </a>
+              <a href="https://www.mongodb.com/" target="_blank" rel="noopener noreferrer" className={styles.skillItem}>
+                MongoDB
+              </a>
+              <a href="https://www.php.net/" target="_blank" rel="noopener noreferrer" className={styles.skillItem}>
+                PHP
+              </a>
+              <a href="https://www.w3schools.com/mysql/default.asp" target="_blank" rel="noopener noreferrer" className={styles.skillItem}>
+                MySQL
+              </a>
+              <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noopener noreferrer" className={styles.skillItem}>
+                Javascript
+              </a>
+              <a href="https://www.adobe.com/products/premiere.html" target="_blank" rel="noopener noreferrer" className={styles.skillItem}>
+                Premiere Pro
+              </a>
+              <a href="https://www.adobe.com/products/aftereffects.html" target="_blank" rel="noopener noreferrer" className={styles.skillItem}>
+                After Effects
+              </a>  
             </div>
           </div>
         </div>

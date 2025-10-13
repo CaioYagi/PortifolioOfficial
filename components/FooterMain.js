@@ -12,25 +12,25 @@ const FooterMain = () => {
           <div className={styles.footerSection}>
             <h3 className={styles.footerTitle}>Caio Hiroki Yagi</h3>
             <p className={styles.footerDescription}>
-              Web Designer apaixonado por criar experiências digitais únicas e funcionais.
+              Web Designer passionate about creating unique and functional digital experiences.
             </p>
             <div className={styles.location}>
-              <span>📍 Salto, São Paulo, Brasil</span>
+              <span>📍 Salto, São Paulo, Brazil</span>
             </div>
           </div>
 
           <div className={styles.footerSection}>
-            <h4 className={styles.sectionTitle}>Links Rápidos</h4>
+            <h4 className={styles.sectionTitle}>Quick Links</h4>
             <ul className={styles.footerLinks}>
               <li><a href="#home">Home</a></li>
-              <li><a href="#sobre">Sobre</a></li>
-              <li><a href="#projetos">Projetos</a></li>
-              <li><a href="#contato">Contato</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#projects">Projects</a></li>
+              <li><a href="#contact">Contact</a></li>
             </ul>
           </div>
 
           <div className={styles.footerSection}>
-            <h4 className={styles.sectionTitle}>Redes Sociais</h4>
+            <h4 className={styles.sectionTitle}>Social Media</h4>
             <div className={styles.socialLinks}>
               <a 
                 href="https://github.com/CaioYagi" 
@@ -75,10 +75,10 @@ const FooterMain = () => {
         {/* Seção inferior com copyright */}
         <div className={styles.footerBottom}>
           <div className={styles.copyright}>
-            <p>&copy; {currentYear} Caio Hiroki Yagi. Todos os direitos reservados.</p>
+            <p>&copy; {currentYear} Caio Hiroki Yagi. All rights reserved.</p>
           </div>
           <div className={styles.footerMeta}>
-            <span>Feito com React.js</span>
+            <span>Made with React.js</span>
           </div>
         </div>
       </div>

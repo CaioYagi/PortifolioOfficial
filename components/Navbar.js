@@ -9,6 +9,24 @@ const Navbar = () => {
     setActiveLink(linkName);
   };
 
+  const handleSmoothScroll = (targetId) => {
+    if (targetId === 'home') {
+      // Para o Home, rola para o topo da página
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    } else {
+      const element = document.getElementById(targetId);
+      if (element) {
+        element.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
+    }
+  };
+
   return (
     <nav className={styles.navbar}>
       <div className={styles.navContainer}>
@@ -29,18 +47,65 @@ const Navbar = () => {
 
         {/* Navigation Links */}
         <div className={styles.navLinks}>
-          <Link href="/" className={`${styles.navLink} ${activeLink === 'Home' ? styles.active : ''}`} onClick={() => handleLinkClick('Home')}>
+          <a 
+            href="#home"
+            onClick={(e) => {
+              e.preventDefault();
+              handleSmoothScroll('home');
+              handleLinkClick('Home');
+            }}
+            className={`${styles.navLink} ${activeLink === 'Home' ? styles.active : ''}`}
+          >
             Home
-          </Link>
-          <Link href="/projects" className={`${styles.navLink} ${activeLink === 'Projects' ? styles.active : ''}`} onClick={() => handleLinkClick('Projects')}>
-            Projects
-          </Link>
-          <Link href="/formation" className={`${styles.navLink} ${activeLink === 'Formation' ? styles.active : ''}`} onClick={() => handleLinkClick('Formation')}>
+          </a>
+          
+          <a 
+            href="#about"
+            onClick={(e) => {
+              e.preventDefault();
+              handleSmoothScroll('about');
+              handleLinkClick('About');
+            }}
+            className={`${styles.navLink} ${activeLink === 'About' ? styles.active : ''}`}
+          >
+            About
+          </a>
+          
+          <a 
+            href="#formation"
+            onClick={(e) => {
+              e.preventDefault();
+              handleSmoothScroll('formation');
+              handleLinkClick('Formation');
+            }}
+            className={`${styles.navLink} ${activeLink === 'Formation' ? styles.active : ''}`}
+          >
             Formation
-          </Link>
-          <Link href="/contacts" className={`${styles.navLink} ${activeLink === 'Contacts' ? styles.active : ''}`} onClick={() => handleLinkClick('Contacts')}>
-            Contacts
-          </Link>
+          </a>
+          
+          <a 
+            href="#projects"
+            onClick={(e) => {
+              e.preventDefault();
+              handleSmoothScroll('projects');
+              handleLinkClick('Projects');
+            }}
+            className={`${styles.navLink} ${activeLink === 'Projects' ? styles.active : ''}`}
+          >
+            Projects
+          </a>
+          
+          <a 
+            href="#contact"
+            onClick={(e) => {
+              e.preventDefault();
+              handleSmoothScroll('contact');
+              handleLinkClick('Contact');
+            }}
+            className={`${styles.navLink} ${activeLink === 'Contact' ? styles.active : ''}`}
+          >
+            Contact
+          </a>
         </div>
       </div>
     </nav>
