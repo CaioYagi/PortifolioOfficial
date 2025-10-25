@@ -71,7 +71,7 @@
 }
 
 .comingSoonTitle {
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-weight: 700;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   -webkit-background-clip: text;
@@ -123,6 +123,123 @@
   font-size: 0.9rem;
 }
 
+/* Demo Section */
+.demoSection {
+  margin-bottom: 50px;
+}
+
+.demoCard {
+  background: white;
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+  position: relative;
+}
+
+.demoCard::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 20px;
+  z-index: -1;
+}
+
+.demoIcon {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  animation: sparkle 2s ease-in-out infinite;
+}
+
+@keyframes sparkle {
+  0%, 100% { transform: scale(1) rotate(0deg); }
+  50% { transform: scale(1.1) rotate(5deg); }
+}
+
+.demoTitle {
+  font-size: 1.8rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 15px;
+}
+
+.demoDescription {
+  font-size: 1.1rem;
+  color: #4a5568;
+  line-height: 1.6;
+  margin-bottom: 25px;
+}
+
+.demoTechnologies {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+
+.techTag {
+  padding: 8px 16px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.demoLinks {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.demoButton {
+  padding: 15px 30px;
+  background: linear-gradient(135deg, #ff6b6b 0%, #ff8e8e 100%);
+  color: white;
+  text-decoration: none;
+  border-radius: 25px;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(255, 107, 107, 0.3);
+}
+
+.demoButton:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(255, 107, 107, 0.4);
+}
+
+.githubButton {
+  padding: 15px 30px;
+  background: #333;
+  color: white;
+  text-decoration: none;
+  border-radius: 25px;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(51, 51, 51, 0.3);
+}
+
+.githubButton:hover {
+  transform: translateY(-3px);
+  background: #555;
+  box-shadow: 0 10px 25px rgba(51, 51, 51, 0.4);
+}
+
 /* Responsividade */
 @media (max-width: 768px) {
   .projectsSection {
@@ -155,6 +272,30 @@
     height: 50px;
     font-size: 1.5rem;
   }
+  
+  .demoCard {
+    padding: 30px 25px;
+    margin: 0 20px;
+  }
+  
+  .demoTitle {
+    font-size: 1.5rem;
+  }
+  
+  .demoDescription {
+    font-size: 1rem;
+  }
+  
+  .demoLinks {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .demoButton,
+  .githubButton {
+    min-width: 200px;
+    text-align: center;
+  }
 }
 
 @media (max-width: 480px) {
@@ -181,5 +322,26 @@
   .comingSoonFeatures {
     flex-direction: column;
     gap: 20px;
+  }
+  
+  .demoCard {
+    padding: 25px 20px;
+  }
+  
+  .demoIcon {
+    font-size: 2.5rem;
+  }
+  
+  .demoTitle {
+    font-size: 1.3rem;
+  }
+  
+  .demoTechnologies {
+    gap: 8px;
+  }
+  
+  .techTag {
+    padding: 6px 12px;
+    font-size: 0.8rem;
   }
 }
