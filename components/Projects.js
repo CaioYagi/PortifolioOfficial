@@ -9,31 +9,66 @@ const Projects = () => {
           <h2 className={styles.title}>My Projects</h2>
           <div className={styles.titleUnderline}></div>
           <p className={styles.subtitle}>
-            Exciting projects are on the way!
+            Exciting projects showcasing my development skills!
           </p>
         </div>
 
-        {/* Special Demo Card */}
-        <div className={styles.demoSection}>
-          <div className={styles.demoCard}>
-            <div className={styles.demoIcon}>✨</div>
-            <h3 className={styles.demoTitle}>Special Project Demo</h3>
-            <p className={styles.demoDescription}>
-              A romantic surprise page with floating photos and Spotify integration. 
+        {/* Projects Grid */}
+        <div className={styles.projectsGrid}>
+          {/* Special Demo Card */}
+          <div className={styles.projectCard}>
+            <div className={styles.projectIcon}>✨</div>
+            <h3 className={styles.projectTitle}>Special Project Demo</h3>
+            <p className={styles.projectDescription}>
+              A romantic surprise page with floating photos, music player and real-time counters. 
               Built with React and CSS animations.
             </p>
-            <div className={styles.demoTechnologies}>
+            <div className={styles.projectTechnologies}>
               <span className={styles.techTag}>React</span>
               <span className={styles.techTag}>CSS Animations</span>
-              <span className={styles.techTag}>Spotify API</span>
+              <span className={styles.techTag}>Audio API</span>
+              <span className={styles.techTag}>JavaScript</span>
             </div>
-            <div className={styles.demoLinks}>
+            <div className={styles.projectLinks}>
               <a 
                 href="/surprise" 
                 target="_blank"
                 className={styles.demoButton}
               >
                 💕 Live Demo
+              </a>
+              <a 
+                href="https://github.com/CaioYagi" 
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.githubButton}
+              >
+                👨‍💻 GitHub
+              </a>
+            </div>
+          </div>
+
+          {/* Integral Calculator Card */}
+          <div className={styles.projectCard}>
+            <div className={styles.projectIcon}>∫</div>
+            <h3 className={styles.projectTitle}>Integral Calculator</h3>
+            <p className={styles.projectDescription}>
+              Advanced integral calculator with virtual keyboard, animated mathematical symbols, 
+              and real-time function parsing. Supports complex mathematical expressions.
+            </p>
+            <div className={styles.projectTechnologies}>
+              <span className={styles.techTag}>React</span>
+              <span className={styles.techTag}>Math.js</span>
+              <span className={styles.techTag}>CSS Animations</span>
+              <span className={styles.techTag}>LaTeX</span>
+            </div>
+            <div className={styles.projectLinks}>
+              <a 
+                href="/calculator" 
+                target="_blank"
+                className={styles.demoButton}
+              >
+                🧮 Live Demo
               </a>
               <a 
                 href="https://github.com/CaioYagi" 

@@ -1,0 +1,9 @@
+@echo off
+echo Iniciando API da Calculadora de Integrais...
+echo.
+echo Instalando dependencias...
+pip install -r requirements.txt
+echo.
+echo Iniciando servidor Python...
+python api/integral_calculator.py
+pause
