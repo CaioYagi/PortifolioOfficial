@@ -1,6 +1,6 @@
 # Portfólio — Caio Hiroki Yagi
 
-Portfólio pessoal desenvolvido com Next.js e React, com foco em design automotivo, modelagem 3D e engenharia. A página destaca um estudo de conjunto mecânico em Fusion 360 e também apresenta projetos digitais, formação, habilidades e contato.
+Portfólio pessoal desenvolvido com Next.js e React. A página inicial apresenta projetos de automação, desenvolvimento e modelagem em uma composição editorial com fotografias feitas por Caio no Japão. Também reúne formação, habilidades e contato.
 
 ## Executar localmente
 
@@ -13,15 +13,18 @@ Acesse `http://localhost:3000`.
 
 ## Projetos apresentados
 
-- **Conjunto de pistões e virabrequim:** prévia CAD e vídeo de visualização em movimento na página inicial.
+- **Plantio automático:** estudo de um mecanismo de preparo do solo, dosagem e cobertura em `/plantio-automatico`.
+- **Conjunto de pistões e virabrequim:** processo de modelagem CAD, montagem, fotografias de referência e vídeo de visualização em `/conjunto-mecanico`.
 - **Calculadora de Integrais:** aplicação interativa em `/calculator`.
 - **Página Surpresa:** experiência com animações, contador e player de áudio em `/surprise`.
 
-O vídeo da página inicial foi recortado, compactado e publicado sem áudio para navegação na web. A animação pode ser pausada, e a reprodução automática respeita a preferência de movimento reduzido. O arquivo Fusion 360 original não é servido publicamente.
+O vídeo do conjunto mecânico só é reproduzido quando o visitante aciona os controles. O arquivo Fusion 360 original não é servido publicamente. A página identifica o conjunto como estudo pessoal e apresenta separadamente a atuação de Caio na Toyota em Product and Pricing Planning.
+
+As fotografias de referência dessa página vêm do Wikimedia Commons: [virabrequim, por Alex Kovach](https://commons.wikimedia.org/wiki/File:Crankshaft.jpg) e [pistão, por S. Diddy](https://commons.wikimedia.org/wiki/File:Piston_2.jpg), ambas sob [CC BY 2.0](https://creativecommons.org/licenses/by/2.0/). Elas são recortadas e recebem ajustes de cor no layout. Os créditos também aparecem na própria página.
 
 ## Contato
 
-O formulário prepara uma mensagem no aplicativo de e-mail do visitante. Ele não envia mensagens por um servidor; o visitante revisa e confirma o envio no próprio aplicativo. O endereço também pode ser copiado ou acessado diretamente pelo link de e-mail.
+O contato usa um link de e-mail. O endereço também pode ser copiado diretamente na página.
 
 ## Build
 

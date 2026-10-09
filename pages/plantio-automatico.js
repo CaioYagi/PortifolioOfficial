@@ -64,7 +64,7 @@ export default function PlantingProject() {
       <a className={styles.skip} href="#conteudo">Pular para o conteúdo</a>
       <div className={styles.scrollProgress} aria-hidden="true" />
       <header className={styles.header}>
-        <div className={styles.wrap}><Link href="/" className={styles.brand}>CY<span>.</span><small>Caio Yagi / Projetos</small></Link><Link href="/#processo" className={styles.back}>← Voltar ao portfólio</Link></div>
+        <div className={styles.wrap}><Link href="/" className={styles.brand}><span className={styles.wordmark}>Caio Yagi<span>.</span></span><small>Projetos</small></Link><Link href="/#processo" className={styles.back}>← Voltar ao portfólio</Link></div>
       </header>
       <main id="conteudo">
         <section className={styles.hero} aria-labelledby="project-title">
@@ -72,7 +72,7 @@ export default function PlantingProject() {
             <div className={styles.kicker}><span>PROJETO 002</span><span>CONTROLE & AUTOMAÇÃO</span><span>EM DESENVOLVIMENTO</span></div>
             <div className={styles.heroGrid}>
               <div><p className={styles.overline}>Mecatrônica aplicada ao cultivo</p><h1 id="project-title">Plantio <em>automático.</em></h1><p className={styles.lead}>Um mecanismo compacto pensado para abrir o solo, dosar a semente e cobri-la em uma única passagem.</p><a className={styles.heroLink} href="#mecanismo">Explorar o mecanismo <span aria-hidden="true">↓</span></a></div>
-              <div className={styles.heroSide}><svg className={styles.growthLine} viewBox="0 0 220 220" fill="none" aria-hidden="true"><path d="M110 204C108 156 106 110 121 38M113 143C80 137 52 116 42 84c36 1 60 19 71 59ZM116 115c18-31 43-47 75-48-12 32-35 49-75 48ZM120 44c-13-18-14-32-4-43 13 10 15 26 4 43Z" /></svg><p>Pequena escala.<br />Grandes perguntas.</p><span className={styles.sideIndex}>CY / 002 — ESTUDO DE PROJETO</span></div>
+              <div className={styles.heroSide}><svg className={styles.growthLine} viewBox="0 0 220 220" fill="none" aria-hidden="true"><path d="M110 204C108 156 106 110 121 38M113 143C80 137 52 116 42 84c36 1 60 19 71 59ZM116 115c18-31 43-47 75-48-12 32-35 49-75 48ZM120 44c-13-18-14-32-4-43 13 10 15 26 4 43Z" /></svg><p>Pequena escala.<br />Grandes perguntas.</p><span className={styles.sideIndex}>ESTUDO / 002 — AUTOMAÇÃO</span></div>
             </div>
           </div>
         </section>
