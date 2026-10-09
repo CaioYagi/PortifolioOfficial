@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import { useState, useRef } from 'react';
 import Head from 'next/head';
 import styles from '../styles/Calculator.module.css';
 
@@ -14,20 +14,6 @@ const IntegralCalculator = () => {
   const [error, setError] = useState('');
   
   const inputRef = useRef(null);
-
-  // Símbolos matemáticos flutuantes
-  const mathSymbols = ['∫', '∑', '∆', 'π', '∞', '√', '∂', 'α', 'β', 'γ', 'θ', 'λ', 'μ', 'σ', 'φ', 'ψ', 'ω', '≤', '≥', '≠', '≈'];
-
-  const floatingSymbols = React.useMemo(() => {
-    return Array.from({ length: 25 }, (_, i) => ({
-      id: i,
-      symbol: mathSymbols[i % mathSymbols.length],
-      left: Math.random() * 100,
-      animationDelay: Math.random() * 20,
-      animationDuration: 15 + Math.random() * 10,
-      fontSize: 1.2 + Math.random() * 1.8
-    }));
-  }, []);
 
   // Funções e símbolos do teclado
   const functionButtons = [
@@ -268,57 +254,25 @@ const IntegralCalculator = () => {
     if (example.upper) setUpperLimit(example.upper);
   };
 
-  // Aplicar estilos globais
-  useEffect(() => {
-    const originalBodyStyle = document.body.style.cssText;
-    
-    document.body.style.background = 'linear-gradient(135deg, #0f0f23 0%, #1a1a3a 50%, #2d2d5f 100%)';
-    document.body.style.backgroundAttachment = 'fixed';
-    document.body.style.margin = '0';
-    document.body.style.padding = '0';
-    document.body.style.minHeight = '100vh';
-
-    return () => {
-      document.body.style.cssText = originalBodyStyle;
-    };
-  }, []);
-
   return (
     <>
       <Head>
-        <title>Calculadora de Integrais Avançada - Caio Yagi</title>
-        <meta name="description" content="Calculadora de integrais com JavaScript - resolva qualquer integral definida ou indefinida" />
+        <title>Calculadora de Integrais | Caio Yagi</title>
+        <meta name="description" content="Explore integrais definidas e regras básicas de integração com exemplos e histórico de cálculos." />
+        <meta name="theme-color" content="#171b1d" />
       </Head>
 
       <div className={styles.container}>
-        {/* Símbolos flutuantes */}
-        <div className={styles.mathSymbolsContainer}>
-          {floatingSymbols.map((symbol) => (
-            <div
-              key={symbol.id}
-              className={styles.floatingSymbol}
-              style={{
-                left: `${symbol.left}%`,
-                animationDelay: `${symbol.animationDelay}s`,
-                animationDuration: `${symbol.animationDuration}s`,
-                fontSize: `${symbol.fontSize}rem`
-              }}
-            >
-              {symbol.symbol}
-            </div>
-          ))}
-        </div>
-
         {/* Header */}
         <header className={styles.header}>
+          <a href="/" className={styles.backButton}>← Voltar ao Portfólio</a>
           <h1 className={styles.title}>
             <span className={styles.integralIcon}>∫</span>
-            Calculadora de Integrais Avançada
+            Calculadora de Integrais
           </h1>
           <p className={styles.subtitle}>
-            Cálculos matemáticos precisos em tempo real
+            Explore funções, limites e métodos de integração.
           </p>
-          <a href="/" className={styles.backButton}>← Voltar ao Portfólio</a>
         </header>
 
         {/* Main Calculator */}
@@ -328,22 +282,23 @@ const IntegralCalculator = () => {
             {/* Input Section */}
             <div className={styles.inputSection}>
               <div className={styles.expressionInput}>
-                <label>Expressão matemática:</label>
+                <label htmlFor="expression">Expressão matemática</label>
                 <input
+                  id="expression"
                   ref={inputRef}
                   type="text"
                   value={expression}
                   onChange={(e) => setExpression(e.target.value)}
                   placeholder="Ex: x^2, sin(x), log(x), exp(x)..."
                   className={styles.mainInput}
-                  onKeyPress={(e) => e.key === 'Enter' && calculateIntegral()}
+                  onKeyDown={(e) => e.key === 'Enter' && calculateIntegral()}
                 />
               </div>
 
               <div className={styles.settingsRow}>
                 <div className={styles.setting}>
-                  <label>Variável:</label>
-                  <select value={variable} onChange={(e) => setVariable(e.target.value)}>
+                  <label htmlFor="variable">Variável</label>
+                  <select id="variable" value={variable} onChange={(e) => setVariable(e.target.value)}>
                     <option value="x">x</option>
                     <option value="t">t</option>
                     <option value="u">u</option>
@@ -352,8 +307,8 @@ const IntegralCalculator = () => {
                 </div>
 
                 <div className={styles.setting}>
-                  <label>Tipo:</label>
-                  <select value={integralType} onChange={(e) => setIntegralType(e.target.value)}>
+                  <label htmlFor="integral-type">Tipo</label>
+                  <select id="integral-type" value={integralType} onChange={(e) => setIntegralType(e.target.value)}>
                     <option value="indefinite">Indefinida ∫f(x)dx</option>
                     <option value="definite">Definida ∫[a,b]f(x)dx</option>
                   </select>
@@ -362,8 +317,9 @@ const IntegralCalculator = () => {
                 {integralType === 'definite' && (
                   <>
                     <div className={styles.setting}>
-                      <label>De:</label>
+                      <label htmlFor="lower-limit">De</label>
                       <input
+                        id="lower-limit"
                         type="text"
                         value={lowerLimit}
                         onChange={(e) => setLowerLimit(e.target.value)}
@@ -372,8 +328,9 @@ const IntegralCalculator = () => {
                       />
                     </div>
                     <div className={styles.setting}>
-                      <label>Até:</label>
+                      <label htmlFor="upper-limit">Até</label>
                       <input
+                        id="upper-limit"
                         type="text"
                         value={upperLimit}
                         onChange={(e) => setUpperLimit(e.target.value)}
