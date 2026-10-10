@@ -68,7 +68,7 @@ export default function PortfolioHome() {
             <div className={styles.heroText}>
               <p className={styles.kicker}><span className={styles.statusDot} /> PORTFÓLIO / CAIO HIROKI YAGI</p>
               <h1 id="hero-title">Criar é<br /><em>prestar atenção.</em></h1>
-              <p className={styles.heroLead}>Sou estudante de Engenharia de Controle e Automação. Gosto de pensar como objetos, sistemas e interfaces podem funcionar melhor — e de dar forma às ideias.</p>
+              <p className={styles.heroLead}>Sou estudante de Engenharia Mecatrônica no CEUNSP. Gosto de pensar como objetos, sistemas e interfaces podem funcionar melhor — e de dar forma às ideias.</p>
               <div className={styles.heroActions}>
                 <a className={styles.roundLink} href="#trabalhos"><span aria-hidden="true">↘</span><span className={styles.srOnly}>Ver trabalhos</span></a>
                 <span>Explore meus trabalhos<br />e conheça meu olhar.</span>
@@ -116,13 +116,13 @@ export default function PortfolioHome() {
           <div className={styles.wrap + ' ' + styles.aboutGrid}>
             <div className={styles.aboutHeading} data-reveal><span className={styles.index}>03 / SOBRE MIM</span><h2 id="about-title">Técnica,<br /><em>curiosidade</em><br />e presença.</h2></div>
             <div className={styles.aboutContent} data-reveal>
-              <p className={styles.aboutLead}>Sou Caio Hiroki Yagi. Estudo Engenharia de Controle e Automação no IFSP e trabalho na Toyota em Product and Pricing Planning. Exploro o encontro entre engenharia, design e desenvolvimento digital.</p>
+              <p className={styles.aboutLead}>Sou Caio Hiroki Yagi. Estudo Engenharia Mecatrônica no CEUNSP e trabalho na Toyota em Product and Pricing Planning. Exploro o encontro entre engenharia, design e desenvolvimento digital.</p>
               <p>Tenho interesse em design automotivo e em projetos que pedem tanto raciocínio técnico quanto sensibilidade para o uso. Também carrego a influência da cultura japonesa no meu modo de observar detalhes, materiais e processos.</p>
               <div className={styles.aboutColumns}>
                 <div><h3>O que pratico</h3><ul><li>Modelagem e montagem CAD</li><li>Automação e prototipagem</li><li>Interfaces web com React</li><li>Comunicação visual</li></ul></div>
                 <div><h3>Ferramentas</h3><ul><li>Fusion 360</li><li>JavaScript, HTML e CSS</li><li>Figma</li><li>Premiere Pro e After Effects</li></ul></div>
               </div>
-              <div className={styles.aboutMeta}><div><span>ATUAÇÃO</span><strong>Product and Pricing Planning</strong><small>Toyota</small></div><div><span>FORMAÇÃO</span><strong>Engenharia de Controle e Automação</strong><small>IFSP · Instituto Federal de São Paulo</small></div><div><span>IDIOMAS</span><strong>Português · Japonês · Inglês</strong><small>Nativo · Conversação fluente · Intermediário</small></div></div>
+              <div className={styles.aboutMeta}><div><span>ATUAÇÃO</span><strong>Product and Pricing Planning</strong><small>Toyota</small></div><div><span>FORMAÇÃO</span><strong>Engenharia Mecatrônica</strong><small>CEUNSP · Em andamento</small></div><div><span>IDIOMAS</span><strong>Português · Japonês · Inglês</strong><small>Nativo · Conversação fluente · Intermediário</small></div></div>
             </div>
           </div>
         </section>
